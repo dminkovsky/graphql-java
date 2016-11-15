@@ -18,15 +18,16 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CompletionStage;
 
 import static graphql.Assert.assertNotNull;
 
 public class GraphQL {
 
 
-    private final GraphQLSchema graphQLSchema;
-    private final ExecutionStrategy queryStrategy;
-    private final ExecutionStrategy mutationStrategy;
+    protected final GraphQLSchema graphQLSchema;
+    protected final ExecutionStrategy queryStrategy;
+    protected final ExecutionStrategy mutationStrategy;
 
     private static final Logger log = LoggerFactory.getLogger(GraphQL.class);
 
