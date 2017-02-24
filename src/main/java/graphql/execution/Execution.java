@@ -3,7 +3,6 @@ package graphql.execution;
 
 import graphql.ExecutionResult;
 import graphql.GraphQLException;
-import graphql.execution.async.AsyncExecutionStrategy;
 import graphql.language.Document;
 import graphql.language.Field;
 import graphql.language.OperationDefinition;
@@ -14,8 +13,6 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.CompletionStage;
-import java.util.stream.Stream;
 
 public class Execution {
 
