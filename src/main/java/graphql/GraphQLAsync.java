@@ -3,6 +3,7 @@ package graphql;
 import graphql.execution.AsyncExecution;
 import graphql.execution.Execution;
 import graphql.execution.ExecutionStrategy;
+import graphql.execution.async.AsyncExecutionStrategy;
 import graphql.language.Document;
 import graphql.language.SourceLocation;
 import graphql.parser.Parser;
@@ -28,11 +29,11 @@ public class GraphQLAsync extends GraphQL {
     private static Logger log = LoggerFactory.getLogger(GraphQLAsync.class);
 
     public GraphQLAsync(GraphQLSchema graphQLSchema) {
-        super(graphQLSchema);
+        this(graphQLSchema, AsyncExecutionStrategy.parallel());
     }
 
     public GraphQLAsync(GraphQLSchema graphQLSchema, ExecutionStrategy queryStrategy) {
-        super(graphQLSchema, queryStrategy);
+        this(graphQLSchema, queryStrategy, AsyncExecutionStrategy.serial());
     }
 
     public GraphQLAsync(GraphQLSchema graphQLSchema, ExecutionStrategy queryStrategy, ExecutionStrategy mutationStrategy) {
